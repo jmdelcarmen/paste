@@ -1,6 +1,23 @@
 .nav-styles {
   background: #e57373;
-  padding-left: 1.5em;
+}
+
+.push-left {
+  margin-left: 2rem !important;
+}
+
+.push-right {
+  margin-right: 2rem !important;
+}
+
+.push-x {
+  margin-left: 2rem !important;
+  margin-right: 2rem !important;
+}
+
+.push-y {
+  margin-top: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
 .text-center {

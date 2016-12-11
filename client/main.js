@@ -8,14 +8,20 @@ import App from './components/app';
 import Section from './components/section/main.js';
 import Footer from './components/footer/main.js';
 
+import Home from './components/section/home';
+import Dashboard from './components/section/dashboard/main';
+
 import Register from './components/header/user/register';
 import Login from './components/header/user/login';
 
 const routes = (
   <Router history={browserHistory}>
     <Route path='/' component={App}>
+      <Route path='home' component={Home}/>
       <Route path='register' component={Register}/>
       <Route path='login' component={Login}/>
+      <Route path='logout' component={App}/>
+      <Route path='dashboard' component={Dashboard}/>
     </Route>
   </Router>
 );

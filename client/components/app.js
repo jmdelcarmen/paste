@@ -10,6 +10,7 @@ const App = (props) => {
     <div>
       <Header />
       <div className="container">{props.children}</div>
+      <Footer />
     </div>
   );
 }

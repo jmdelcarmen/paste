@@ -4,13 +4,14 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
 class Login extends Component {
+
   componentWillMount() {
     if(Meteor.userId()) {
-      browserHistory.push('/');
+      browserHistory.push('/home');
     }
   }
 
-  onSubmit(event) {
+  login(event) {
     event.preventDefault();
 
     const refs = this.refs;
@@ -23,7 +24,7 @@ class Login extends Component {
           Materialize.toast(err.reason, 2000);
         }
         else {
-          browserHistory.push('/')
+          browserHistory.push('/home')
         }
       })
     }
@@ -36,7 +37,7 @@ class Login extends Component {
     return(
       <div className="row">
         <h4 className="text-center">Login</h4>
-        <form onSubmit={this.onSubmit.bind(this)} className="col offset-s4 s4">
+        <form onSubmit={this.login.bind(this)} className="col offset-s4 s4">
           <div className="row">
             <div className="input-field col s12">
               <input ref="email" id="email" type="email" className="validate" />

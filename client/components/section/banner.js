@@ -2,13 +2,14 @@
 
 import React, { Component } from 'react';
 
-class Section extends Component {
+class Banner extends Component {
   render() {
     return(
       <div>
-        <h1>Hi</h1>
+      <h1>I am a banner!</h1>
       </div>
     );
   }
 }
-export default Section;
+
+export default Banner;

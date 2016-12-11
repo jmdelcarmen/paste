@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
 class Register extends Component {
+
   componentWillMount() {
     if(Meteor.userId()) {
       browserHistory.push('/');
@@ -11,7 +12,7 @@ class Register extends Component {
   }
 
   //submit form
-  onSubmit(event) {
+  register(event) {
     event.preventDefault();
     //get form values using refs
     const refs = this.refs;
@@ -43,7 +44,7 @@ class Register extends Component {
     return(
       <div className="row">
         <h4 className="text-center">Register Account</h4>
-        <form onSubmit={this.onSubmit.bind(this)} className="col offset-s4 s4">
+        <form onSubmit={this.register.bind(this)} className="col offset-s4 s4">
           <div className="row">
             <div className="input-field col s12">
               <input ref="email" id="email" type="email" className="validate" />
