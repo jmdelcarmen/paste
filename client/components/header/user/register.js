@@ -4,6 +4,12 @@ import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 
 class Register extends Component {
+  componentWillMount() {
+    if(Meteor.userId()) {
+      browserHistory.push('/');
+    }
+  }
+
   //submit form
   onSubmit(event) {
     event.preventDefault();
@@ -22,19 +28,13 @@ class Register extends Component {
       Accounts.createUser(User, (err) => {
         if (err) {
           Materialize.toast('There was an error creating your account.', 2000);
-        } else {
-          //meteor login user
-          Meteor.loginWithPassword(email, password, (err) => {
-            if (err) {
-              Materialize.toast('There was an error creating your account.', 2000);
-            } else {
-              //redirect to home page
-              browserHistory.push('/');
-            }
-          });
+        }
+        else {
+          browserHistory.push('/');
         }
       }); //create user
-    } else {
+    }
+    else {
       Materialize.toast('Your passwords don\'t match', 2000);
     } //password confirmation
   }//onSubmit
