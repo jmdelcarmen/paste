@@ -9,6 +9,7 @@ class PrivateButtons extends Component {
       <div>
         <span>Created by: Username</span>
         <p>Private buttons</p>
+        <button className="btn" onClick={this.props.viewPaste.bind(this)}>View</button>
       </div>
     );
   }

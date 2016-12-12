@@ -14,6 +14,7 @@ class PasteDetail extends Component {
             <div className="card-panel blue lighten-1">
               <h4>Paste title</h4>
               <p>{_id}</p>
+              <PasteButtons id={_id} />
             </div>
           </div>
         </div>

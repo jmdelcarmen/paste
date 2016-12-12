@@ -21,21 +21,25 @@ Meteor.methods({
       comments: []
     });
   },
-
-  'paste.remove': function(bin) {
-    return Pastes.remove(bin)
+  
+  'paste.view': function (id) {
+    return Pastes.findOne(id);
   },
 
-  'paste.update': function(bin, content) {
-    return Pastes.update(bin._id, { $set: { content } });
+  'paste.remove': function(paste) {
+    return Pastes.remove(paste);
   },
 
-  'paste.share': function(bin) {
-    return Pastes.update(bin._id, { $set: { public: true } });
+  'paste.update': function(paste, content) {
+    return Pastes.update(paste._id, { $set: { content } });
   },
 
-  'paste.hide': function(bin) {
-    return Pastes.update(bin._id, { $set: { public: false } });
+  'paste.share': function(paste) {
+    return Pastes.update(paste._id, { $set: { public: true } });
+  },
+
+  'paste.hide': function(paste) {
+    return Pastes.update(paste._id, { $set: { public: false } });
   }
 
 });

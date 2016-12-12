@@ -6,7 +6,7 @@ class Section extends Component {
   render() {
     return(
       <div>
-        <h1>Hi</h1>
+        <h1>Hi I am the main section.</h1>
       </div>
     );
   }

@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import { browserHistory } from 'react-router';
 
 import PublicButtons from './public_buttons';
 import PrivateButtons from './private_buttons';
@@ -8,9 +9,24 @@ import PrivateButtons from './private_buttons';
 
 class PasteButtons extends Component {
 
+  viewPaste(event) {
+    event.preventDefault();
+    const { id } = this.props;
+    // console.log(id);
+    Meteor.call('paste.view', id, (err, paste) => {
+      if (err) {
+        Materialize.toast(err.reason, 2000);
+      }
+      else {
+        browserHistory.push(`/paste/view/${paste._id}`);
+      }
+    });
+  }
+
   render() {
+    const { id } = this.props;
     //if user buttons
-    const buttons = Meteor.userId() ? <PrivateButtons /> : <PublicButtons />;
+    const buttons = Meteor.userId() ? <PrivateButtons id={ id } viewPaste={this.viewPaste} /> : <PublicButtons id={ id } viewPaste={this.viewPaste} />;
 
     return(
       <div>
