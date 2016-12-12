@@ -8,13 +8,7 @@ import LoggedInNav from './user/loggedInNav';
 
 
 class Header extends Component {
-
-  componentWillMount() {
-    if(!Meteor.userId()) {
-      browserHistory.push('/home');
-    }
-  }
-
+  
   logout(event) {
     event.preventDefault();
     Meteor.logout(function (err) {

@@ -7,7 +7,7 @@ class Register extends Component {
 
   componentWillMount() {
     if(Meteor.userId()) {
-      browserHistory.push('/');
+      browserHistory.push('/home');
     }
   }
 
@@ -31,7 +31,7 @@ class Register extends Component {
           Materialize.toast('There was an error creating your account.', 2000);
         }
         else {
-          browserHistory.push('/');
+          browserHistory.push('/home');
         }
       }); //create user
     }

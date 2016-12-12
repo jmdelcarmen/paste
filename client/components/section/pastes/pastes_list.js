@@ -13,7 +13,6 @@ class PasteList extends Component {
       return <PasteDetail key={paste._id} paste={paste} />;
     });
 
-
     return(
       <div>
         <h2>PasteList</h2>
