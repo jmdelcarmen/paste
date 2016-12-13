@@ -14,7 +14,7 @@ Meteor.methods({
       createdAt: new Date(),
       content: '',
       sharedWith: [],
-      ownderId: this.userId,
+      ownerId: Meteor.userId(),
       public: true,
       likes: 0,
       views: 0,

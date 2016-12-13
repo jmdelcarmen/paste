@@ -26,5 +26,5 @@ class UserPastes extends Component {
 export default createContainer( () => {
   Meteor.subscribe('public.pastes');
 
-  return { pastes: Pastes.find({ownderId: Meteor.userId()}).fetch() };
+  return { pastes: Pastes.find({ownerId: Meteor.userId()}).fetch() };
 }, UserPastes);
