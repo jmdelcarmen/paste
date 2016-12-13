@@ -26,8 +26,8 @@ Meteor.methods({
     return Pastes.findOne(id);
   },
 
-  'paste.remove': function(paste) {
-    return Pastes.remove(paste);
+  'paste.remove': function(id) {
+    return Pastes.remove(id);
   },
 
   'paste.edit': function( { id }, content) {

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { render } from 'react-dom';
-import { Router, Route, browserHistory, getIndexRoute, IndexRedirect } from 'react-router';
+import { Router, Route, browserHistory, IndexRoute, IndexRedirect } from 'react-router';
 
 import App from './components/app';
 import Section from './components/section/main.js';
@@ -16,7 +16,6 @@ import PasteView from './components/section/pastes/pastes_view';
 
 const routes = (
   <Router history={browserHistory}>
-    <getIndexRoute to='/home'/>
     <Route path='/paste/view/:id' component={PasteView}/>
     <Route path='/' component={App}>
       <Route path='home' component={Home} />

@@ -14,9 +14,9 @@ class UserPastes extends Component {
     });
 
     return(
-      <div>
+      <div className="row">
         <h2>PasteList</h2>
-        {pasteList}
+        <div className="row">{pasteList}</div>
         <button className="btn-block btn">Load More</button>
       </div>
     );
