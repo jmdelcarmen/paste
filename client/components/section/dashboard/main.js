@@ -1,7 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
-import PasteList from '../pastes/pastes_list';
+import UserPastes from './user_pastes';
 
 import CreatePaste from './create_paste';
 
@@ -11,7 +11,7 @@ class Dashboard extends Component {
       <div>
         <h1>Dashboard</h1>
         <CreatePaste />
-        <PasteList />
+        <UserPastes />
       </div>
     );
   }

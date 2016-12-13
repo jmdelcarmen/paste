@@ -30,8 +30,8 @@ Meteor.methods({
     return Pastes.remove(paste);
   },
 
-  'paste.update': function(paste, content) {
-    return Pastes.update(paste._id, { $set: { content } });
+  'paste.edit': function( { id }, content) {
+    return Pastes.update(id, { $set: { content } });
   },
 
   'paste.share': function(paste) {
