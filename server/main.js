@@ -10,5 +10,4 @@ Meteor.startup(() => {
     return Pastes.find({ public: true });
   });
 
-
 });

@@ -3,8 +3,6 @@
 import React, { Component } from 'react';
 
 class PublicButtons extends Component {
-
-
   render() {
     return(
       <div>

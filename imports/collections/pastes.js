@@ -21,7 +21,7 @@ Meteor.methods({
       comments: []
     });
   },
-  
+
   'paste.view': function (id) {
     return Pastes.findOne(id);
   },

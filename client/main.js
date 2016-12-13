@@ -12,11 +12,12 @@ import Dashboard from './components/section/dashboard/main';
 import Register from './components/header/user/register';
 import Login from './components/header/user/login';
 import PasteEdit from './components/section/pastes/pastes_edit';
+import PasteView from './components/section/pastes/pastes_view';
 
 const routes = (
   <Router history={browserHistory}>
     <getIndexRoute to='/home'/>
-    <Route path='/paste/view/:id' />
+    <Route path='/paste/view/:id' component={PasteView}/>
     <Route path='/' component={App}>
       <Route path='home' component={Home} />
       <Route path='register' component={Register} />

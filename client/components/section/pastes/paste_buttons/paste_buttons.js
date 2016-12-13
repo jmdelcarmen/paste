@@ -12,7 +12,6 @@ class PasteButtons extends Component {
   viewPaste(event) {
     event.preventDefault();
     const { id } = this.props;
-    // console.log(id);
     Meteor.call('paste.view', id, (err, paste) => {
       if (err) {
         Materialize.toast(err.reason, 2000);
