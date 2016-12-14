@@ -39,14 +39,17 @@ class PasteEdit extends Component {
       <div className="row">
         <div className="col-xs-11">
           <h5>Title: {title}</h5>
-           <input type="text" ref="title" placeholder="Type new title. . ." /><button onClick={this.saveTitle.bind(this)} className="btn btn-default">Edit Title</button>
-          <CodeMirror
+            <div className="row">
+             <input type="text" ref="title" placeholder="Type new title. . ." />
+             <button onClick={this.saveTitle.bind(this)} className="btn btn-default">Save Title</button>
+            </div>
+          <CodeMirror className="col-xs-12"
             value={content}
             onChange={this.editContent.bind(this)}
             options={{ mode: 'markdown', lineNumbers: true }}/>
         </div>
-        <Link className="button" to={viewPath}>View</Link>
         <PasteShare paste={this.props.paste} />
+        <Link className="btn btn-default" to={viewPath}>View Pull me right</Link>
       </div>
     );
   }

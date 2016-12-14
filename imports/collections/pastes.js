@@ -39,8 +39,8 @@ Meteor.methods({
     return Pastes.update(id, { $set: { title } });
   },
 
-  'paste.share': function(paste) {
-    return Pastes.update(paste._id, { $set: { public: true } });
+  'paste.share': function({ _id }, sharedWith ) {
+    return Pastes.update(_id, { $push: { sharedWith: sharedWith }});
   },
 
   'paste.hide': function(paste) {
