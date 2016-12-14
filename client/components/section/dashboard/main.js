@@ -2,7 +2,6 @@
 
 import React, { Component } from 'react';
 import UserPastes from './user_pastes';
-
 import CreatePaste from './create_paste';
 
 class Dashboard extends Component {

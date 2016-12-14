@@ -10,7 +10,6 @@ class CreatePaste extends Component {
     Meteor.call('paste.create', (err, pasteId) => {
       browserHistory.push(`/paste/edit/${pasteId}`);
     });
-
   }
 
 

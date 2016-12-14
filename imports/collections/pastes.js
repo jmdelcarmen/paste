@@ -11,6 +11,7 @@ Meteor.methods({
       {email: String, comment: String, date: new Date()}
     */
     return Pastes.insert({
+      title: '',
       createdAt: new Date(),
       content: '',
       sharedWith: [],
@@ -30,8 +31,12 @@ Meteor.methods({
     return Pastes.remove(id);
   },
 
-  'paste.edit': function( { id }, content) {
+  'paste.edit': function( { id }, content ) {
     return Pastes.update(id, { $set: { content } });
+  },
+
+  'paste.saveTitle': function( { id }, title ) {
+    return Pastes.update(id, { $set: { title } });
   },
 
   'paste.share': function(paste) {
