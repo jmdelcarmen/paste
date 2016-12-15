@@ -16,24 +16,18 @@ import PasteView from './components/section/pastes/pastes_view';
 
 const routes = (
   <Router history={browserHistory}>
-    <Route path='/paste/view/:id' component={PasteView}/>
     <Route path='/' component={App}>
       <Route path='home' component={Home} />
       <Route path='register' component={Register} />
       <Route path='login' component={Login} />
       <Route path='logout' component={App} />
-      <Route path='dashboard' component={isLoggedIn(Dashboard)} />
-      <Route path='paste/edit/:id' component={isLoggedIn(PasteEdit)} />
+      <Route path='dashboard' component={Dashboard} />
+      <Route path='paste/edit/:id' component={PasteEdit} />
     </Route>
+    <Route path='/paste/view/:id' component={PasteView}/>
   </Router>
 );
 
-function isLoggedIn(component) {
-  if (Meteor.userId()) {
-    return component;
-  }
-  browserHistory.push('/home');
-};
 
 
 Meteor.startup(() => {

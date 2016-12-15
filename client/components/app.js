@@ -1,18 +1,30 @@
 'use strict';
 
-import React from 'react';
+import React, { Component } from 'react';
 import Header from './header/main.js';
 import Section from './section/main.js';
 import Footer from './footer/main.js';
+import { browserHistory } from 'react-router';
 
-const App = (props) => {
-  return (
-    <div>
-      <Header />
-      <div className="container">{props.children}</div>
-      <Footer />
-    </div>
-  );
+class App extends Component {
+
+  componentWillMount() {
+    browserHistory.push('/home');
+  }
+
+  constructor(props) {
+    super(props);
+  }
+
+  render () {
+    return (
+      <div>
+        <Header />
+        <div className="container">{this.props.children}</div>
+        <Footer />
+      </div>
+    );
+  }
 }
 
 export default App;

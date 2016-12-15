@@ -23,10 +23,9 @@ class PasteView extends Component {
   }
 
   render() {
-    const goBack = Meteor.userId() ? '/dashboard' : '/home';
     return (
       <div className="container">
-        <Link className="btn btn-default" to={goBack}>Go back</Link>
+        <Link className="btn btn-default" to='/home'>Go back</Link>
         <div className="render-container" dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
       </div>
     );

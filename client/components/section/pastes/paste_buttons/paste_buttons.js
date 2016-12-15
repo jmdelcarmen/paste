@@ -24,10 +24,8 @@ class PasteButtons extends Component {
 
   render() {
     const { id, ownerId, sharedWith } = this.props;
-    console.log(this.props);
     //if user buttons
     const buttons = Meteor.userId() === ownerId ? <PrivateButtons id={ id } viewPaste={this.viewPaste} /> : <PublicButtons id={ id } viewPaste={this.viewPaste} />;
-
     return(
       <div>
         {buttons}

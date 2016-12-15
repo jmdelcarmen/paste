@@ -1,9 +1,6 @@
 'use strict';
 
 import React, { Component } from 'react';
-import { createContainer } from 'meteor/react-meteor-data';
-import { Pastes } from '../../../../imports/collections/pastes';
-
 import PasteDetail from './pastes_detail';
 
 
@@ -23,8 +20,4 @@ class PasteList extends Component {
   }
 }
 
-export default createContainer( () => {
-  Meteor.subscribe('public.pastes');
-
-  return { pastes: Pastes.find({}).fetch() };
-}, PasteList);
+export default PasteList;

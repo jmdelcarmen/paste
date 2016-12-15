@@ -8,7 +8,7 @@ import LoggedInNav from './user/loggedInNav';
 
 
 class Header extends Component {
-  
+
   logout(event) {
     event.preventDefault();
     Meteor.logout(function (err) {
@@ -24,7 +24,6 @@ class Header extends Component {
   render() {
     //if user
     const navOptions = Meteor.userId() ? <LoggedInNav logout={this.logout} /> : <LoggedOutNav />;
-
     return(
       <nav className="nav-styles">
         <div className="nav-wrapper container">
