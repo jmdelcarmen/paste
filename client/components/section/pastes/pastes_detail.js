@@ -5,9 +5,15 @@ import PasteButtons from './paste_buttons/paste_buttons';
 import { createContainer } from 'meteor/react-meteor-data';
 
 class PasteDetail extends Component {
+
+
   constructor(props) {
     super(props);
+
+    this.state = { user: {} }
   }
+
+
   render() {
     const { _id, ownerId, sharedWith, title, createdAt } = this.props.paste;
     return(
@@ -24,7 +30,7 @@ class PasteDetail extends Component {
 }
 
 export default createContainer((props) => {
-  Meteor.subscribe('userData');
+  Meteor.subscribe('userData', props.paste.ownerId);
 
-  return { user: Meteor.users.find({_id: props.paste.ownerId}).fetch() };
+  return { user: Meteor.users.find().fetch()};
 }, PasteDetail);

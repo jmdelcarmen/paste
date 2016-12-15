@@ -16,6 +16,7 @@ import PasteView from './components/section/pastes/pastes_view';
 
 const routes = (
   <Router history={browserHistory}>
+    <Route path='/paste/view/:id' component={PasteView}/>
     <Route path='/' component={App}>
       <Route path='home' component={Home} />
       <Route path='register' component={Register} />
@@ -24,7 +25,6 @@ const routes = (
       <Route path='dashboard' component={Dashboard} />
       <Route path='paste/edit/:id' component={PasteEdit} />
     </Route>
-    <Route path='/paste/view/:id' component={PasteView}/>
   </Router>
 );
 

@@ -5,6 +5,10 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.methods({
 
+  'get.pastes': function () {
+    return Pastes.find({});
+  },
+
   'paste.create': function() {
     /*
     Comments schema

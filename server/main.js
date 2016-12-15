@@ -9,8 +9,8 @@ Meteor.startup(() => {
     return Pastes.find({ public: true });
   });
 
-  Meteor.publish('userData', function () {
-    return Meteor.users.find();
+  Meteor.publish('userData', function (id) {
+    return Meteor.users.find(id);
   });
 
   console.log('Construction ongoing at port 3000. . .');
