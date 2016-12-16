@@ -16,7 +16,7 @@ class PrivateButtons extends Component {
     const { id } = this.props;
     Meteor.call('paste.remove', id, (err) => {
       if (err) {
-        Materialize.toast(err.reason, 2000);
+        Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
       else {
         browserHistory.push('/dashboard');

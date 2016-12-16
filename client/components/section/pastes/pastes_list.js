@@ -8,10 +8,9 @@ class PasteList extends Component {
   render() {
     const pasteList = this.props.pastes.map(paste => <PasteDetail key={paste._id} paste={paste} />);
     return(
-      <div className="row">
+      <div className="row pastelist-wrapper">
         <h2>PasteList</h2>
-        <div className="row">{pasteList}</div>
-        <button className="btn-block btn">Load More</button>
+        <div className="row flex">{pasteList}</div>
       </div>
     );
   }

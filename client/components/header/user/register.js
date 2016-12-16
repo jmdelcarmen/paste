@@ -28,7 +28,7 @@ class Register extends Component {
       //meteor method for creating new users
       Accounts.createUser(User, (err) => {
         if (err) {
-          Materialize.toast('There was an error creating your account.', 2000);
+          Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
         }
         else {
           browserHistory.push('/home');
@@ -36,7 +36,7 @@ class Register extends Component {
       }); //create user
     }
     else {
-      Materialize.toast('Your passwords don\'t match', 2000);
+      Bert.alert('Your passwords don\'t match', 'danger', 'fixed-top', 'fa-frown-o');
     } //password confirmation
   }//onSubmit
 

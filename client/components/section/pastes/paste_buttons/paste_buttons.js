@@ -15,7 +15,7 @@ class PasteButtons extends Component {
     const { id } = this.props;
     Meteor.call('paste.view', id, (err, paste) => {
       if (err) {
-        Materialize.toast(err.reason, 2000);
+        Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
       else {
         browserHistory.push(`/paste/view/${paste._id}`);

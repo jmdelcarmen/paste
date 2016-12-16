@@ -13,7 +13,7 @@ class Header extends Component {
     event.preventDefault();
     Meteor.logout(function (err) {
       if (err) {
-        return Materialize.toast('Failed to logout', 2000);
+        return Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
       else {
         browserHistory.push('/home');
@@ -25,7 +25,7 @@ class Header extends Component {
     //if user
     const navOptions = Meteor.userId() ? <LoggedInNav logout={this.logout} /> : <LoggedOutNav />;
     return(
-      <nav className="nav-styles">
+      <nav className="mainnav-wrapper">
         <div className="nav-wrapper container">
           <Link to="/home" className="brand-logo">Paste</Link>
           {navOptions}

@@ -16,7 +16,7 @@ class PasteView extends Component {
     const { id } = this.props.params;
     Meteor.call('paste.view', id, (err, paste) => {
       if (err) {
-        Materialize.toast(err.reason, 2000);
+        Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
       this.setState({paste: paste, content: markdown.toHTML(paste.content)});
     });

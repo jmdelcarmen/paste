@@ -7,15 +7,13 @@ import { createContainer } from 'meteor/react-meteor-data';
 class PasteDetail extends Component {
   render() {
     const { _id, ownerId, sharedWith, title, createdAt } = this.props.paste;
-    const owner = this.props.user.emails[0].address;
+    const owner = this.props.user ? this.props.user.emails[0].address : '';
     return(
-      <div className="col l4 m6 s12">
-        <div className="card-panel blue lighten-1">
-          <h4>{title}</h4>
-          <p>Pasted at: {createdAt.toDateString()}</p>
-          <p>Pasted by: {owner}</p>
-          <PasteButtons id={_id} ownerId={ownerId} sharedWith={sharedWith}/>
-        </div>
+      <div className="pastedetail-wrapper">
+        <h4>{title}</h4>
+        <p>Pasted at: {createdAt.toDateString()}</p>
+        <p>Pasted by: {owner}</p>
+        <PasteButtons id={_id} ownerId={ownerId} sharedWith={sharedWith}/>
       </div>
     );
   }

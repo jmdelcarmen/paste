@@ -14,7 +14,7 @@ class PasteEdit extends Component {
   editContent(content) {
     Meteor.call('paste.edit', this.props.params, content, (err) => {
       if (err) {
-        Materialize.toast(err.reason, 2000);
+        Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
     });
   }
@@ -24,7 +24,7 @@ class PasteEdit extends Component {
 
     Meteor.call('paste.saveTitle', this.props.params, this.refs.title.value, (err) => {
       if (err) {
-        Materialize.toast(err.reason, 2000);
+        Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
       this.refs.title.value = '';
     });

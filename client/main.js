@@ -28,8 +28,6 @@ const routes = (
   </Router>
 );
 
-
-
 Meteor.startup(() => {
   render(routes, document.querySelector('.appContainer'));
 });

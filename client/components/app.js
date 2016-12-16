@@ -12,10 +12,6 @@ class App extends Component {
     browserHistory.push('/home');
   }
 
-  constructor(props) {
-    super(props);
-  }
-
   render () {
     return (
       <div>

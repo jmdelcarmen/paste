@@ -21,15 +21,15 @@ class Login extends Component {
     if (email !== '' && password !== '') {
       Meteor.loginWithPassword(email, password, (err) => {
         if (err) {
-          Materialize.toast(err.reason, 2000);
+          Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
         }
         else {
           browserHistory.push('/home')
         }
-      })
+      });
     }
     else {
-      Materialize.toast('Enter email and password.', 2000);
+      Bert.alert('Enter email and password.', 'danger', 'fixed-top', 'fa-frown-o');
     }
   }
 

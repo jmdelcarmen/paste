@@ -13,7 +13,7 @@ class PasteShare extends Component {
     if (this.refs.sharedWith.value !== '') {
       Meteor.call('paste.share', this.props.paste, this.refs.sharedWith.value, (err) => {
         if (err) {
-          Materialize.toast(err.reason, 2000);
+          Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
         }
         this.refs.sharedWith.value = '';
       });
