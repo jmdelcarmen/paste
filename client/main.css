@@ -1,1 +1,19 @@
 /* CSS declarations go here */
+.banner-wrapper {
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  width: 100%;
+  background: #1e88e5;
+  padding: 0;
+}
+
+.banner-wrapper h1 {
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+img {
+  max-height: 350px;
+  padding: 0;
+}

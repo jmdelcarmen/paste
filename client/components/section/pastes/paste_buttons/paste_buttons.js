@@ -2,6 +2,7 @@
 
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
+import { createContainer } from 'meteor/react-meteor-data';
 
 import PublicButtons from './public_buttons';
 import PrivateButtons from './private_buttons';
@@ -25,7 +26,13 @@ class PasteButtons extends Component {
   render() {
     const { id, ownerId, sharedWith } = this.props;
     //if user buttons
-    const buttons = Meteor.userId() === ownerId ? <PrivateButtons id={ id } viewPaste={this.viewPaste} /> : <PublicButtons id={ id } viewPaste={this.viewPaste} />;
+    let buttons;
+    if (Meteor.userId() ) {
+      buttons = Meteor.userId() === ownerId || sharedWith.indexOf(this.props.user.emails[0].address) !== -1 ? <PrivateButtons id={ id } viewPaste={this.viewPaste} /> : <PublicButtons id={ id } viewPaste={this.viewPaste} />;
+    } else {
+      buttons = <PublicButtons id={ id } viewPaste={this.viewPaste} />;
+    }
+
     return(
       <div>
         {buttons}
@@ -34,4 +41,8 @@ class PasteButtons extends Component {
   }
 }
 
-export default PasteButtons;
+export default createContainer(() => {
+  Meteor.subscribe('userData');
+
+    return { user: Meteor.users.findOne(Meteor.userId()) };
+}, PasteButtons);

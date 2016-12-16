@@ -49,7 +49,7 @@ class PasteEdit extends Component {
             options={{ mode: 'markdown', lineNumbers: true }}/>
         </div>
         <PasteShare paste={this.props.paste} />
-        <Link className="btn btn-default" to={viewPath}>View Pull me right</Link>
+        <Link className="btn btn-default" to={viewPath}>View</Link>
       </div>
     );
   }
@@ -59,6 +59,6 @@ export default createContainer(({ params }) => {
 
   Meteor.subscribe('public.pastes');
 
-  return { paste: Pastes.findOne({_id: params.id })};
+  return { paste: Pastes.findOne(params.id)};
 
 }, PasteEdit);

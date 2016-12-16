@@ -9,7 +9,7 @@ import { Pastes } from '../../../imports/collections/pastes';
 class Home extends Component {
   render() {
     return(
-      <div>
+      <div className="home-wrapper wrapper">
         <Banner />
         <PasteList pastes={this.props.pastes} />
       </div>
@@ -20,5 +20,5 @@ class Home extends Component {
 export default createContainer(() => {
   Meteor.subscribe('public.pastes');
 
-  return { pastes: Pastes.find({}).fetch() };
+  return { pastes: Pastes.find().fetch() };
 }, Home);
