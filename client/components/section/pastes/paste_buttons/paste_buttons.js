@@ -34,7 +34,7 @@ class PasteButtons extends Component {
     }
 
     return(
-      <div>
+      <div className="pastebuttons-wrapper">
         {buttons}
       </div>
     );

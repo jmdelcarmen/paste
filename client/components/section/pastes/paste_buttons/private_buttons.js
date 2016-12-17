@@ -27,9 +27,9 @@ class PrivateButtons extends Component {
   render() {
     return(
       <div>
-        <button className="btn" onClick={this.props.viewPaste.bind(this)}>View</button>
-        <button className="btn" onClick={this.editPaste.bind(this)}>Edit</button>
-        <button className="btn" onClick={this.removePaste.bind(this)}>Delete</button>
+        <button className="private-btn" onClick={this.props.viewPaste.bind(this)}>View</button>
+        <button className="private-btn" onClick={this.editPaste.bind(this)}>Edit</button>
+        <button className="private-btn" onClick={this.removePaste.bind(this)}>Delete</button>
       </div>
     );
   }

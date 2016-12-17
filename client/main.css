@@ -1,10 +1,11 @@
 * {
   box-sizing: border-box;
-  font-family: 'PT Sans', sans-serif;
+  /*font-family: 'PT Sans', sans-serif;*/
 }
 
 body {
-  background: #4E4E6A;
+  background: #2A3356;
+  color: #fff;
 }
 
 /*=======ICONS=========*/
@@ -32,12 +33,12 @@ body {
 
 /*=======BANNER=========*/
 .banner-wrapper {
-  margin: 7.5% 0 12.5%;
+  margin: 7% 0%;
   text-align: center;
   display: flex;
   flex-flow: column wrap;
   width: 100%;
-  background: #7be5ed;
+  background: #5E88FC;
   padding: 0;
 }
 
@@ -53,34 +54,115 @@ img {
 
 /*=======PASTE_INFO=========*/
 .pasteinfo-wrapper {
-  margin: 12.5% 0;
+  margin: 7% 0%;
   padding: 5em 2em;
-  background: #4E4E6A;
+  background: #2A3356;
   color: white;
 }
 
 /*=======PASTE_LIST=========*/
 .pastelist-wrapper {
-  margin: 12.5% 0;
-  background: #7be5ed;
+  margin: 7% 0%;
+  background: #5E88FC;
+  padding: 0;
+}
+
+.pastelist-wrapper .pastelist-title {
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.pastelist-wrapper .pastelist-title span {
+  padding: .3em 20%;
+  margin-top: .5em;
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.6);
 }
 
 /*=======PASTE_DETAIL=========*/
 .pastedetail-wrapper {
   display: inline-block;
-  min-height: 350px;
-  min-width: 22.5%;
-  background: rgba(0, 0, 0, 0.3);
+  min-height: 300px;
+  width: 30.5% !important;
+  background: rgba(255, 255, 255, .9);
   margin: 1.25%;
   padding: 0;
-  border-radius: 4px;
-  border: 2px solid white;
+  box-shadow: 0 7px 0px rgba(0, 0, 0, 0.5);
+  position: relative;
+  border-radius: 3px;
 }
 
 .pastedetail-wrapper h4 {
+  font-size: 1.8em;
   text-align: center;
   margin: 0;
-  padding: 30px 0;
-  background: rgba(0, 0, 0, 0.7);
+  padding: 45px 20px 20px;
+  background: #2E94B9;
   color: white;
+  border-bottom: 6px solid rgba(0, 0, 0, 0.5);
+}
+
+.pastedetail-wrapper .created-at {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  padding: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  color: black;
+  font-weight: 500;
+}
+
+.pastedetail-wrapper .desc {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.6);
+  color: #444;
+  height: 100px;
+  padding: 7px;
+}
+
+.pastebuttons-wrapper {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  padding: 10px;
+}
+
+.pastebuttons-wrapper .public-btn {
+  width: 100%;
+  height: 30px;
+  padding: 3px;
+  border: none;
+  border-radius: 7px;
+  background: #015668;
+}
+
+.pastebuttons-wrapper .private-btn {
+  width: 33.333%;
+  height: 30px;
+  padding: 3px;
+  border: 2px solid white;
+  border-radius: 7px;
+  background: #015668;
+}
+
+/*=======PASTE_EDIT=========*/
+.pasteedit-wrapper .form {
+  background: #fefefe;
+  height: 300px;
+}
+
+.pasteedit-wrapper form {
+  padding: 1.5em;
+}
+
+.pasteedit-wrapper form label {
+  color: #444 !important;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+.pasteedit-wrapper form textarea {
+  margin-bottom: 1.5em;
 }

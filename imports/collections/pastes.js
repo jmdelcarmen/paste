@@ -16,6 +16,7 @@ Meteor.methods({
     */
     return Pastes.insert({
       title: '',
+      desc: '',
       createdAt: new Date(),
       content: '',
       sharedWith: [],
@@ -39,8 +40,8 @@ Meteor.methods({
     return Pastes.update(id, { $set: { content } });
   },
 
-  'paste.saveTitle': function( { id }, title ) {
-    return Pastes.update(id, { $set: { title } });
+  'paste.saveEdit': function( { id }, title, desc ) {
+    return Pastes.update(id, { $set: { title, desc } });
   },
 
   'paste.share': function({ _id }, sharedWith ) {

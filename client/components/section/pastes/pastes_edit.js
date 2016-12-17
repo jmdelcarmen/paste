@@ -19,37 +19,55 @@ class PasteEdit extends Component {
     });
   }
 
-  saveTitle(event) {
+  onPasteSave(event) {
     event.preventDefault();
-
-    Meteor.call('paste.saveTitle', this.props.params, this.refs.title.value, (err) => {
-      if (err) {
-        Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
-      }
-      this.refs.title.value = '';
-    });
+    if (this.refs.desc.value !== '' && this.refs.title.value !== '') {
+      Meteor.call('paste.saveEdit', this.props.params, this.refs.title.value, this.refs.desc.value, (err) => {
+        if (err) {
+          Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
+        }
+        Bert.alert('Paste Edited', 'success', 'fixed-top', 'fa-smile-o');
+        this.refs.title.value = '';
+        this.refs.desc.value = '';
+      });
+    } else {
+      Bert.alert('Make sure to fill in all fileds.', 'danger', 'fixed-top', 'fa-frown-o');
+    }
   }
 
   render() {
       // console.log(this.props.paste);
-      const { content, title } = this.props.paste ? this.props.paste : '';
+      const { content, title, desc } = this.props.paste ? this.props.paste : '';
       const viewPath = `/paste/view/${this.props.params.id}`;
 
     return(
-      <div className="row">
-        <div className="col-xs-11">
+      <div className="row pasteedit-wrapper">
+        <Link className="btn btn-default" to={viewPath}>View</Link>
+        <div className=" container">
+
           <h5>Title: {title}</h5>
-            <div className="row">
-             <input type="text" ref="title" placeholder="Type new title. . ." />
-             <button onClick={this.saveTitle.bind(this)} className="btn btn-default">Save Title</button>
-            </div>
-          <CodeMirror className="col-xs-12"
+          <p>Descrioption: {desc}</p>
+          <CodeMirror className="col l8 s12 m12"
             value={content}
             onChange={this.editContent.bind(this)}
             options={{ mode: 'markdown', lineNumbers: true }}/>
+
+         <div className="col l4 s12 m6 form">
+           <form>
+             <label>Title: </label>
+             <input className="form-control" type="text" ref="title" placeholder="Type new title. . ." />
+             <label>Description: </label>
+             <textarea className="form-control" ref="desc" placeholder="Type new description . . "></textarea>
+             <button onClick={this.onPasteSave.bind(this)} className="btn btn-default btn-block">Save Changes</button>
+           </form>
+         </div>
+
+         <div className="col l12 m6 s12">
+          <PasteShare paste={this.props.paste} />
+
+         </div>
+
         </div>
-        <PasteShare paste={this.props.paste} />
-        <Link className="btn btn-default" to={viewPath}>View</Link>
       </div>
     );
   }
