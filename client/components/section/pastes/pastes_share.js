@@ -4,7 +4,7 @@ import React, { Component } from 'react';
 
 class PasteShare extends Component {
 
-  renderSharedWith () {
+  renderSharedWith() {
     return this.props.paste.sharedWith.map(person => <button className="btn">{person}</button>);
   }
 

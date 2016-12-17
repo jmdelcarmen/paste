@@ -3,8 +3,8 @@
 .CodeMirror {
   /* Set height, width, borders, and global font properties here */
   font-family: monospace;
-  height: 300px;
-  color: #fff;
+  height: 370px;
+  color: #444;
 }
 
 /* PADDING */
@@ -42,7 +42,7 @@
 /* CURSOR */
 
 .CodeMirror-cursor {
-  border-left: 4px solid orange;
+  border-left: 5px solid orange;
   border-right: none;
   width: 0;
 }
@@ -152,7 +152,7 @@ div.CodeMirror span.CodeMirror-nonmatchingbracket {color: #f22;}
 .CodeMirror {
   position: relative;
   overflow: hidden;
-  background: #444;
+  background: #eee;
 }
 
 .CodeMirror-scroll {

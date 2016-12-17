@@ -9,11 +9,12 @@ import PasteInfo from './home_components/paste_info';
 
 class Home extends Component {
   render() {
+    const pastes = this.props.pastes ? this.props.pastes : '';
     return(
       <div className="home-wrapper wrapper">
         <Banner />
         <PasteInfo />
-        <PasteList pastes={this.props.pastes} />
+        <PasteList pastes={pastes} />
       </div>
     );
   }

@@ -10,7 +10,7 @@ class UserPastes extends Component {
     return(
       <div className="row pastelist-wrapper">
         <h2 className="pastelist-title"><span>Your Pastes</span></h2>
-        <div className="row flex container">{pasteList}</div>
+        <div className="row flex">{pasteList}</div>
       </div>
     );
   }

@@ -43,16 +43,19 @@ class PasteEdit extends Component {
     return(
       <div className="row pasteedit-wrapper">
         <Link className="btn btn-default" to={viewPath}>View</Link>
-        <div className=" container">
+        <div>
 
           <h5>Title: {title}</h5>
-          <p>Descrioption: {desc}</p>
-          <CodeMirror className="col l8 s12 m12"
+          <p>Description: {desc}</p>
+          <CodeMirror
+            id="codemirror"
+            className="col l8 s12 m12"
             value={content}
             onChange={this.editContent.bind(this)}
             options={{ mode: 'markdown', lineNumbers: true }}/>
 
          <div className="col l4 s12 m6 form">
+            <h5>Edit This Paste</h5>
            <form>
              <label>Title: </label>
              <input className="form-control" type="text" ref="title" placeholder="Type new title. . ." />
