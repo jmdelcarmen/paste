@@ -9,8 +9,9 @@ body {
 }
 
 /*=======MD-RENDER-CONTAINER=========*/
-#wrapper {
+.render-container {
   background: white;
+  color: black !important;
 }
 
 /*=======ICONS=========*/

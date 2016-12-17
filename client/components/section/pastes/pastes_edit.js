@@ -52,7 +52,8 @@ class PasteEdit extends Component {
             className="col l8 s12 m12"
             value={content}
             onChange={this.editContent.bind(this)}
-            options={{ mode: 'markdown', lineNumbers: true }}/>
+            options={{ mode: 'markdown', lineNumbers: true,
+            lineWrapping: true}}/>
 
          <div className="col l4 s12 m6 form">
             <h5>Edit This Paste</h5>
