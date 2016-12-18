@@ -35,9 +35,9 @@ class Login extends Component {
 
   render() {
     return(
-      <div className="row">
+      <div className="row login-wrapper">
         <h4 className="text-center">Login</h4>
-        <form onSubmit={this.login.bind(this)} className="col offset-s4 s4">
+        <form onSubmit={this.login.bind(this)} className="col offset-s4 s4 login-form">
           <div className="row">
             <div className="input-field col s12">
               <input ref="email" id="email" type="email" className="validate" />

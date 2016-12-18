@@ -37,14 +37,13 @@ class PasteEdit extends Component {
 
   render() {
       // console.log(this.props.paste);
+      // <PasteShare paste={this.props.paste} />
       const { content, title, desc } = this.props.paste ? this.props.paste : '';
       const viewPath = `/paste/view/${this.props.params.id}`;
 
     return(
       <div className="row pasteedit-wrapper">
-        <Link className="btn btn-default" to={viewPath}>View</Link>
         <div>
-
           <h5>Title: {title}</h5>
           <p>Description: {desc}</p>
           <CodeMirror
@@ -66,9 +65,8 @@ class PasteEdit extends Component {
            </form>
          </div>
 
-         <div className="col l12 m6 s12">
-          <PasteShare paste={this.props.paste} />
-
+         <div className="col l8 m6 s12 text-right">
+          <Link className="btn" to={viewPath}>View</Link>
          </div>
 
         </div>

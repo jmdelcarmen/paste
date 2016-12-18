@@ -42,9 +42,9 @@ class Register extends Component {
 
   render() {
     return(
-      <div className="row">
+      <div className="row register-container">
         <h4 className="text-center">Register Account</h4>
-        <form onSubmit={this.register.bind(this)} className="col offset-s4 s4">
+        <form onSubmit={this.register.bind(this)} className="col offset-s4 s4 register-form">
           <div className="row">
             <div className="input-field col s12">
               <input ref="email" id="email" type="email" className="validate" />

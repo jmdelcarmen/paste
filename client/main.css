@@ -8,6 +8,32 @@ body {
   color: #fefefe;
 }
 
+.btn {
+  background: #FFB737;
+  box-shadow: none;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  color: white;
+  font-weight: 500;
+}
+
+.btn:hover {
+  background: #FFB737;
+  opacity: 0.8;
+  color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
+}
+
+/*=======PASTE_EDIT=========*/
+.register-form, .login-form {
+  background: rgba(255, 255, 255, 0.85);
+  color: #444;
+  padding: 50px 25px !important;
+}
+
+.register-form label, .login-form label {
+  margin-bottom: 10px !important;
+}
+
 /*=======MD-RENDER-CONTAINER=========*/
 .render-container {
   background: white;
@@ -99,8 +125,7 @@ img {
   padding: .3em 20%;
   margin-top: .5em;
   display: inline-block;
-  background: rgba(0, 0, 0, 0.4);
-  color: rgba(255, 255, 255, .85);
+  background: #446CB3;
 }
 
 /*=======PASTE_DETAIL=========*/
@@ -155,7 +180,7 @@ img {
   color: #fff;
   height: 200px;
   padding: 10px;
-  font-size: 1.3em;
+  font-size: 1.05em;
 }
 
 .pastebuttons-wrapper {
@@ -175,6 +200,7 @@ img {
   border: none;
   border-bottom: 4px solid rgba(0, 0, 0, 0.3);
   background: #ff5267;
+  transition: .4s all;
 }
 
 .pastebuttons-wrapper .private-btn {
@@ -184,6 +210,13 @@ img {
   border: none;
   border-bottom: 4px solid rgba(0, 0, 0, 0.3);
   background: #ff5267;
+  transition: .4s all;
+}
+
+.pastebuttons-wrapper .public-btn:hover, .pastebuttons-wrapper .private-btn:hover {
+  background: #B33A48;
+  color: white;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.5);
 }
 
 /*=======CREATE_PASTE_BUTTON=========*/
@@ -194,6 +227,14 @@ img {
   border-bottom: 4.5px solid rgba(0, 0, 0, 0.4);
   font-size: 1.5em;
   position: relative;
+  transition: .4s all;
+}
+
+.createpaste-button:hover {
+  /*transform: scale(1.05);*/
+  padding: 10px 100px 10px 20px;
+  background: #49BDAA;
+  color: white;
 }
 
 .create-icon {
@@ -207,7 +248,6 @@ img {
 .createpaste-container {
   text-align: right;
   padding: 20px 50px;
-  border-bottom: 3px solid rgba(0, 0, 0, 0.5);
 }
 
 /*=======PASTE_EDIT=========*/
