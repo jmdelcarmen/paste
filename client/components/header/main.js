@@ -13,9 +13,10 @@ class Header extends Component {
     event.preventDefault();
     Meteor.logout(function (err) {
       if (err) {
-        return Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
+        Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
       else {
+        Bert.alert('You are now logged out.', 'info', 'fixed-top', 'fa-smile-o');
         browserHistory.push('/home');
       }
     });

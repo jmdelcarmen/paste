@@ -417,3 +417,13 @@ sub {
 body.dark #wrapper {
   background: transparent !important;
   box-shadow: none !important; }
+
+
+/*==================CUSTOM STYLES==================*/
+#wrapper {
+  color: #444 !important;
+}
+
+#wrapper ul li {
+  list-style: disc;
+}

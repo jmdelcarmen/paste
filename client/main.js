@@ -29,5 +29,5 @@ const routes = (
 );
 
 Meteor.startup(() => {
-  render(routes, document.querySelector('.appContainer'));
+  render(routes, document.querySelector('.app-target'));
 });

@@ -24,6 +24,7 @@ class Login extends Component {
           Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
         }
         else {
+          Bert.alert(`Welcome ${email}`, 'success', 'fixed-top', 'fa-smile-o');
           browserHistory.push('/home')
         }
       });

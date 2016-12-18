@@ -37,7 +37,7 @@ class PasteEdit extends Component {
 
   render() {
       // console.log(this.props.paste);
-      // <PasteShare paste={this.props.paste} />
+
       const { content, title, desc } = this.props.paste ? this.props.paste : '';
       const viewPath = `/paste/view/${this.props.params.id}`;
 
@@ -68,6 +68,8 @@ class PasteEdit extends Component {
          <div className="col l8 m6 s12 text-right">
           <Link className="btn" to={viewPath}>View</Link>
          </div>
+
+         <PasteShare paste={this.props.paste} />
 
         </div>
       </div>

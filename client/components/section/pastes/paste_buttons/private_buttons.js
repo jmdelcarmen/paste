@@ -19,7 +19,7 @@ class PrivateButtons extends Component {
         Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
       else {
-        browserHistory.push('/dashboard');
+        Bert.alert('Paste deleted', 'success', 'fixed-top', 'fa-frown-o');
       }
     });
   }

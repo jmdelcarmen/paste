@@ -31,6 +31,7 @@ class Register extends Component {
           Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
         }
         else {
+          Bert.alert('Welcome to Paste', 'success', 'fixed-top', 'fa-smile-o');
           browserHistory.push('/home');
         }
       }); //create user

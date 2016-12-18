@@ -1,6 +1,14 @@
 * {
   box-sizing: border-box;
-  /*font-family: 'PT Sans', sans-serif;*/
+  font-family: 'Nunito Sans', sans-serif;
+}
+
+p {
+  font-family: 'Comfortaa', cursive;
+}
+
+a, a:hover, a:active, a:focus {
+  text-decoration: none;
 }
 
 body {
@@ -8,6 +16,33 @@ body {
   color: #fefefe;
 }
 
+/*=======APP STYLES=========*/
+.app-container {
+  min-height: calc(100vh - 100px);
+}
+
+/*=======MAINNAV=========*/
+.mainnav-wrapper a {
+  color: #ff5f47 !important;
+  font-weight: 700;
+  font-size: 1.2em;
+  display: block;
+  transition: .4s all;
+}
+
+.mainnav-wrapper a:hover {
+  color: white !important;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.mainnav-wrapper .brand-logo {
+  font-size: 2em;
+  padding: 0 25px;
+  background: #ff5f47;
+  color: white !important;
+}
+
+/*=======BUTTON STYLES=========*/
 .btn {
   background: #FFB737;
   box-shadow: none;
@@ -16,7 +51,7 @@ body {
   font-weight: 500;
 }
 
-.btn:hover {
+.btn:hover, .btn:focus {
   background: #FFB737;
   opacity: 0.8;
   color: white;
@@ -246,7 +281,7 @@ img {
 }
 
 .createpaste-container {
-  text-align: right;
+  text-align: center;
   padding: 20px 50px;
 }
 
@@ -278,4 +313,56 @@ img {
 
 .pasteedit-wrapper form textarea {
   margin-bottom: 1.5em;
+}
+
+
+/*=======APP STYLES=========*/
+.pasteshare-wrapper form label {
+  color: white !important;
+  font-size: 1.5em !important;
+  width: 100%;
+  text-align: center;
+}
+
+.pasteshare-wrapper form input {
+  border-bottom: 2px solid rgba(255,255,255,0.6);
+  font-size: 1.5em;
+  font-weight: 700;
+}
+
+.pasteshare-wrapper form input:focus {
+  border-bottom: 2px solid white !important;
+}
+
+.pasteshare-wrapper .collection {
+  color: #444;
+}
+
+/*=======FOOTER=========*/
+.footer-wrapper {
+  margin-top: 2.5em;
+}
+
+.social-wrapper {
+  display: inline-block;
+  margin-bottom: 1.5em;
+}
+
+.social-wrapper i {
+  background: rgba(0, 0, 0, 0.5);
+  font-size: 2.5em;
+  width: 60px;
+  padding: 10px 10px;
+  margin: 0 .1em;
+  border-radius: 4px;
+  transition: .4s all;
+}
+
+.social-wrapper a {
+  color: white;
+}
+
+.social-wrapper a:hover > i {
+  background: rgba(255, 255, 255, .85);
+  color: #444;
 }
