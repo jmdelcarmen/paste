@@ -3,7 +3,6 @@
 import React, { Component } from 'react';
 import { browserHistory } from 'react-router';
 import UserPastes from './user_pastes';
-import CreatePaste from './create_paste';
 import { createContainer } from 'meteor/react-meteor-data';
 import { Pastes } from '../../../../imports/collections/pastes';
 
@@ -17,8 +16,6 @@ class Dashboard extends Component {
   render() {
     return(
       <div>
-        <h1>Dashboard</h1>
-        <CreatePaste />
         <UserPastes pastes={this.props.pastes} />
       </div>
     );

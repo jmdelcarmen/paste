@@ -15,7 +15,7 @@ class CreatePaste extends Component {
 
   render() {
     return(
-      <button onClick={this.createPaste.bind(this)}className="btn">Create Paste</button>
+      <button onClick={this.createPaste.bind(this)}className="createpaste-button">Create Paste<i className="material-icons create-icon">mode_edit</i></button>
     );
   }
 }
