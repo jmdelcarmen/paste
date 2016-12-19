@@ -4,7 +4,7 @@
 }
 
 p {
-  font-family: 'Comfortaa', cursive;
+  /*font-family: 'Comfortaa', cursive;*/
 }
 
 a, a:hover, a:active, a:focus {
@@ -91,7 +91,6 @@ body {
 .flex {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
 }
 
 /*=======MAIN-NAV=========*/
@@ -168,9 +167,9 @@ img {
   display: flex;
   flex-flow: column wrap;
   min-height: 270px;
-  width: 27.5% !important;
+  width: 30.5% !important;
   background: rgba(0, 0, 0, 0.5);
-  margin: 2.25%;
+  margin: 1.25%;
   padding: 45px 0px;
   position: relative;
   border-radius: 3px;

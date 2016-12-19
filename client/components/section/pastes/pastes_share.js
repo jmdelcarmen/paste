@@ -5,19 +5,29 @@ import React, { Component } from 'react';
 class PasteShare extends Component {
 
   renderSharedWith() {
-    return this.props.paste.sharedWith.map(person => <li className="collection-item">{person}</li>);
+    const paste = this.props.paste;
+    if (paste) {
+      return paste.sharedWith.map(person => <li className="collection-item">{person}</li>);
+    } else {
+      return;
+    }
   }
 
   sharePaste(event) {
     event.preventDefault();
-    if (this.refs.sharedWith.value !== '') {
-      Meteor.call('paste.share', this.props.paste, this.refs.sharedWith.value, (err) => {
+    let shareEmail = this.refs.sharedWith.value;
+    const paste = this.props.paste;
+    if (shareEmail !== '' && paste.sharedWith.indexOf(shareEmail) ) {
+      Meteor.call('paste.share', paste, shareEmail, (err) => {
         if (err) {
           Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
         }
-        Bert.alert(`Paste shared with ${this.refs.sharedWith.value}`, 'info', 'fixed-top', 'fa-smile-o');
-        this.refs.sharedWith.value = '';
+        Bert.alert(`Paste shared with ${shareEmail}`, 'success', 'fixed-top', 'fa-smile-o');
+        shareEmail = '';
       });
+    }
+    else {
+      Bert.alert(`This paste is already shared with ${shareEmail}`, 'info', 'fixed-top', 'fa-smile-o');
     }
   }
 
