@@ -1,1 +1,1 @@
-web: meteor
+web: meteor npm install --save react babel-runtime react-router react-codemirror codemirror markdown react-dom && meteor
