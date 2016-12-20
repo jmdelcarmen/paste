@@ -36,11 +36,7 @@ class PasteEdit extends Component {
   }
 
   render() {
-      // console.log(this.props.paste);
-
-      const { content, title, desc } = this.props.paste ? this.props.paste : '';
-      const viewPath = `/paste/view/${this.props.params.id}`;
-
+    const { content, title, desc } = this.props.paste ? this.props.paste : '';
     return(
       <div className="row pasteedit-wrapper">
         <div>
@@ -63,10 +59,6 @@ class PasteEdit extends Component {
              <textarea className="form-control" ref="desc" placeholder="Type new description . . "></textarea>
              <button onClick={this.onPasteSave.bind(this)} className="btn btn-default btn-block">Save Changes</button>
            </form>
-         </div>
-
-         <div className="col l8 m6 s12 text-right">
-          <Link className="btn" to={viewPath}>View</Link>
          </div>
 
          <PasteShare paste={this.props.paste} />

@@ -16,7 +16,7 @@ class Dashboard extends Component {
   render() {
     return(
       <div>
-        <UserPastes pastes={this.props.pastes} />
+        <UserPastes pastes={this.props.pastes.reverse()} />
       </div>
     );
   }

@@ -3,9 +3,6 @@
   font-family: 'Nunito Sans', sans-serif;
 }
 
-p {
-  /*font-family: 'Comfortaa', cursive;*/
-}
 
 a, a:hover, a:active, a:focus {
   text-decoration: none;
@@ -42,6 +39,13 @@ body {
   color: white !important;
 }
 
+.dropdown-content {
+  top: 64px !important;
+}
+
+.dropdown-content.active {
+  right: 100px !important;
+}
 /*=======BUTTON STYLES=========*/
 .btn {
   background: #FFB737;

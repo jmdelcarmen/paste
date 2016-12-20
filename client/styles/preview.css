@@ -1,4 +1,4 @@
-
+/*
 /*
 This document has been created with Marked.app <http://marked2app.com>, Copyright 2013 Brett Terpstra
 Content is property of the document author
@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6 {
   color: #777;
   font-size: 1em; }
 
-#wrapper p, #wrapper blockquote, #wrapper table, #wrapper pre {
+ p, blockquote, table, pre {
   margin: 15px 0; }
 
 #wrapper ul {
@@ -161,7 +161,7 @@ table {
 img {
   max-width: 100%; }
 
-#wrapper code, tt {
+code, tt {
   display: block;
   margin: 0 2px;
   padding: 0 5px;

@@ -5,9 +5,6 @@ import { Meteor } from 'meteor/meteor';
 
 Meteor.methods({
 
-  'get.pastes': function () {
-    return Pastes.find({});
-  },
 
   'paste.create': function() {
     /*
@@ -15,8 +12,8 @@ Meteor.methods({
       {email: String, comment: String, date: new Date()}
     */
     return Pastes.insert({
-      title: '',
-      desc: '',
+      title: 'Paste',
+      desc: 'Paste description',
       createdAt: new Date(),
       content: '',
       sharedWith: [],

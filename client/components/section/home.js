@@ -14,7 +14,7 @@ class Home extends Component {
       <div className="home-wrapper wrapper">
         <Banner />
         <PasteInfo />
-        <PasteList pastes={pastes} />
+        <PasteList pastes={pastes.reverse()} />
       </div>
     );
   }
@@ -23,5 +23,5 @@ class Home extends Component {
 export default createContainer(() => {
   Meteor.subscribe('public.pastes');
 
-  return { pastes: Pastes.find().fetch() };
+  return { pastes: Pastes.find({title: /[a-z]/ig}).fetch() };
 }, Home);

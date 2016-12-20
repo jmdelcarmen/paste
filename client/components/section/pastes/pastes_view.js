@@ -26,8 +26,7 @@ class PasteView extends Component {
     return (
       <div className="container">
         <div className="text-center">
-          <Link className="btn" to='/home'>Home</Link>
-          <Link className="btn " to='/dashboard'>Dashboard</Link>
+          <Link className="btn" to='/home'>Back to Home</Link>
         </div>
         <div id="wrapper" className="render-container" dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
       </div>
