@@ -7,10 +7,6 @@ Meteor.methods({
 
 
   'paste.create': function() {
-    /*
-    Comments schema
-      {email: String, comment: String, date: new Date()}
-    */
     return Pastes.insert({
       title: 'Paste',
       desc: 'Paste description',
