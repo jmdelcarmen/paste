@@ -7,10 +7,10 @@ class Banner extends Component {
     return(
       <div className="banner-wrapper wrapper">
         <div>
-          <h3>Hipster Ipsum </h3>
-          <img className="responsive-img" src="https://static1.squarespace.com/static/54fe5d59e4b038fd96c9a7c5/550a1fa1e4b0fca40dc6f6b1/550a1fa1e4b03c7ec206969d/1426726818023/Placeholder+Logo.png"/>
+          <img className="responsive-img banner-image" src="http://4.bp.blogspot.com/-q4fs9VuLt70/VFlEs3ao8jI/AAAAAAAA-pA/iAVvy5_MofE/s1600/colores%2Bpara%2Bmi%2Bblog.png"/>
           <div><i className="material-icons angle-down">keyboard_arrow_down</i></div>
         </div>
+        <h3 className="banner-title">Paste</h3>
       </div>
     );
   }

@@ -112,6 +112,7 @@ body {
   width: 100%;
   background: #FFB737;
   padding-bottom: 3em;
+  position: relative;
 }
 
 .banner-wrapper h1 {
@@ -119,13 +120,18 @@ body {
   font-weight: 500;
 }
 
-img {
-  max-height: 350px;
-  padding: 0;
-}
-
 .angle-down {
   font-size: 4em;
+}
+
+.banner-title {
+  font-size: 6em;
+  font-family: 'Baloo Thambi', cursive;
+  text-transform: uppercase;
+  letter-spacing: .5em;
+  text-align: center;
+  display: inline-block;
+  padding-left: .5em;
 }
 
 /*=======PASTE_INFO=========*/
