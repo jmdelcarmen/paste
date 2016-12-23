@@ -406,7 +406,7 @@ body {
 
 .home-appear {
   opacity: 0.01;
-  transform: translateY(50px);
+  transform: translateY(-50px);
 }
 
 .home-appear.home-appear-active {
