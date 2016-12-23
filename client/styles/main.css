@@ -375,3 +375,78 @@ body {
   background: rgba(255, 255, 255, .85);
   color: #444;
 }
+
+
+
+/*=======DASHBOARD=========*//*=======FOOTER=========*//*=======FOOTER=========*//*=======FOOTER=========*/
+
+.dashboard-appear {
+  opacity: 0.01;
+  transform: translateY(100px);
+}
+
+.dashboard-appear.dashboard-appear-active {
+  opacity: 1;
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(0);
+}
+
+.dashboard-leave {
+  opacity: 1;
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transform: translateY(0);
+}
+
+.dashboard-leave, .dashboard-leave-active {
+  opacity: 0.01;
+  transform: translateY(100px);
+}
+
+/*=======HOME=========*/
+
+.home-appear {
+  opacity: 0.01;
+  transform: translateY(50px);
+}
+
+.home-appear.home-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+/*=======VIEW=========*/
+.view-appear {
+  opacity: 0.01;
+  transform: translateX(50%);
+}
+
+.view-appear.view-appear-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+
+/*=======EDIT=========*/
+.edit-appear {
+  opacity: 0.01;
+}
+
+.edit-appear.edit-appear-active {
+  opacity: 1;
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+/*=======LOGIN/REGISTER=========*/
+.signin-appear {
+  opacity: 0.01;
+  transform: translateY(50px);
+}
+
+.signin-appear.signin-appear-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all .4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}

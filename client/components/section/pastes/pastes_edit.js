@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import { createContainer } from'meteor/react-meteor-data';
 import { Pastes } from '../../../../imports/collections/pastes';
@@ -38,6 +39,12 @@ class PasteEdit extends Component {
   render() {
     const { content, title, desc } = this.props.paste ? this.props.paste : '';
     return(
+      <ReactCSSTransitionGroup
+          transitionName="dashboard"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeOut={500}
+          transitionLeaveTimeOut={300}>
       <div className="row pasteedit-wrapper">
         <div>
           <h5>Title: {title}</h5>
@@ -65,6 +72,7 @@ class PasteEdit extends Component {
 
         </div>
       </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

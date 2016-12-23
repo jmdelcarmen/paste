@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import { markdown } from 'markdown';
 
@@ -24,12 +25,19 @@ class PasteView extends Component {
 
   render() {
     return (
+      <ReactCSSTransitionGroup
+          transitionName="view"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeOut={500}
+          transitionLeaveTimeOut={300}>
       <div className="container">
         <div className="text-center">
           <Link className="btn" to='/home'>Back to Home</Link>
         </div>
         <div id="wrapper" className="render-container" dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
       </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }

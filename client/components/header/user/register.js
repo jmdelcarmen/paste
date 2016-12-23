@@ -1,6 +1,7 @@
 'use strict';
 
 import React, { Component } from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { browserHistory } from 'react-router';
 
 class Register extends Component {
@@ -43,6 +44,12 @@ class Register extends Component {
 
   render() {
     return(
+      <ReactCSSTransitionGroup
+          transitionName="signin"
+          transitionAppear={true}
+          transitionAppearTimeout={500}
+          transitionEnterTimeOut={500}
+          transitionLeaveTimeOut={300}>
       <div className="row register-container">
         <h4 className="text-center">Register Account</h4>
         <form onSubmit={this.register.bind(this)} className="col offset-s4 s4 register-form">
@@ -71,6 +78,7 @@ class Register extends Component {
           </div>
         </form>
       </div>
+      </ReactCSSTransitionGroup>
     );
   }
 }
