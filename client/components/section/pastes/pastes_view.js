@@ -4,13 +4,14 @@ import React, { Component } from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import { markdown } from 'markdown';
+import PasteCommentList from './pastes_comment_list';
 
 class PasteView extends Component {
 
   constructor(props) {
     super(props);
 
-    this.state = { paste: {}, content: '' };
+    this.state = { paste: {}, content: '', comments: [] };
   }
 
   componentWillMount () {
@@ -19,8 +20,16 @@ class PasteView extends Component {
       if (err) {
         Bert.alert(err.reason, 'danger', 'fixed-top', 'fa-frown-o');
       }
-      this.setState({paste: paste, content: markdown.toHTML(paste.content)});
+      //set comments here
+      this.setState({paste: paste, content: markdown.toHTML(paste.content), comments: paste.comments });
     });
+  }
+
+  renderCommentList() {
+    if (this.state.comments.length > 0) {
+      return <PasteCommentList comments={this.state.comments}/>;
+    }
+    return <div></div>;
   }
 
   render() {
@@ -36,7 +45,13 @@ class PasteView extends Component {
           <Link className="btn" to='/home'>Back to Home</Link>
         </div>
         <div id="wrapper" className="render-container" dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
+
+        <div>
+          {this.renderCommentList()}
+        </div>
+
       </div>
+
       </ReactCSSTransitionGroup>
     );
   }
