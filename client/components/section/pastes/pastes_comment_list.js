@@ -6,14 +6,13 @@ import PasteCommentDetail from './pastes_comment_detail';
 class PasteCommentList extends Component {
 
   renderCommentList() {
-    return this.props.comments.map(comment => <PasteCommentDetail key={comment} comment={comment}/> );
+    return this.props.comments.map(comment => <PasteCommentDetail key={comment.commentDate} comment={comment}/> );
   }
 
 
   render() {
     return (
       <div>
-        <h1>Comments</h1>
         {this.renderCommentList()}
       </div>
     );

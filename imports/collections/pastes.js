@@ -21,18 +21,6 @@ Meteor.methods({
     });
   },
 
-  //comment schema
-  /*
-
-  comment: {
-    commentBody,
-    commentDate,
-    commentBy,
-    commentUps,
-    commentDowns
-  }
-
-  */
   'paste.addComment': function ( id, comment) {
     return Pastes.update(id, {$push: { comments: comment } });
   },

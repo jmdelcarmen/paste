@@ -5,6 +5,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import { Link } from 'react-router';
 import { markdown } from 'markdown';
 import PasteCommentList from './pastes_comment_list';
+import PasteCommentForm from './pastes_comment_form';
 
 class PasteView extends Component {
 
@@ -46,7 +47,9 @@ class PasteView extends Component {
         </div>
         <div id="wrapper" className="render-container" dangerouslySetInnerHTML={{ __html: this.state.content }}></div>
 
-        <div>
+        <div className="comments-wrapper">
+          <h2>Comments</h2>
+          <PasteCommentForm paste={this.state.paste}/>
           {this.renderCommentList()}
         </div>
 
