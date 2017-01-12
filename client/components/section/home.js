@@ -10,7 +10,7 @@ import PasteInfo from './home_components/paste_info';
 
 class Home extends Component {
   render() {
-    const pastes = this.props.pastes ? this.props.pastes : '';
+    const pastes = this.props.pastes;
     return(
       <ReactCSSTransitionGroup
           transitionName="home"

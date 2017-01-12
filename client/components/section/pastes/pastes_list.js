@@ -5,6 +5,11 @@ import PasteDetail from './pastes_detail';
 
 class PasteList extends Component {
   render() {
+    if (!this.props.pastes.length) {
+      //add prelaoder
+      return <div>Loading...</div>
+    }
+
     const pasteList = this.props.pastes.map(paste => <PasteDetail key={paste._id} paste={paste} />);
     return(
       <div className="row pastelist-wrapper">
